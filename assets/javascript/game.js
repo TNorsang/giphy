@@ -6,15 +6,15 @@ $(document).ready(function () {
 
     var topics = ['husky', 'akita', 'alaskan malamute', 'basset hound', 'airedale terrier', 'australian bulldog', 'bernese mountain dog', 'boerboel', 'boxer', 'bullmastiff', 'cane corso', 'collie', 'dobermann', 'dogue de bordeaux', 'english pointer', 'german shepherd']
 
-    // ============== Creates button from the arrays ================= \\
+    // ==============  ================= \\
 
     function displayDogInfo() {
 
         var dogBreed = $(this).attr('data-name');
-        console.log(this);
+        var debugResponse;
         var queryURL = 'https://api.giphy.com/v1/gifs/search?api_key=Jm0Lnl7Ny3f7ljroOhENuKSTWvuYo24i&q=' + dogBreed + '&limit=25&offset=0&rating=G&lang=en';
-        var debugResposne;
-
+        
+       
 
         // ============== Getting the API using AJAX ================= \\
 
@@ -22,18 +22,17 @@ $(document).ready(function () {
             url: queryURL,
             method: "GET"
         }).then(function (response) {
-
+            var dogDiv = $("<div class='movie'>");
             var imageURL = response.imageURL;
-
-            var image = $('<img>').attr('src', imgURL);
-
-            debugResposne = response;
-            console.log(response);
-
+            var image = $('<img>').attr('src', imageURL);
+            dogDiv.append(image);
+            debugResponse = response;
+            console.log(debugResponse);
+            
         });
     }
-
-
+       
+    displayDogInfo();
     // ============== Setting the var queryURL and debugResponse ================= \\
 
 
@@ -49,8 +48,6 @@ $(document).ready(function () {
             a.text(topics[i]);
             $('.dogTypes').append(a);
 
-            // $('.dogTypes').append('<button>'  + topics[i] + '</button>');
-
         }
 
     };
@@ -61,7 +58,7 @@ $(document).ready(function () {
 
     // ============== Getting the API using AJAX ================= \\
 
-    $('#dogTypes').on('click', function (buttons) {
+    $('#dogTypes').on('click', function () {
         var dogType = $('#dogTypes').val().trim();
         topics.push(dogType);
 
