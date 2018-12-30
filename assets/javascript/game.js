@@ -58,7 +58,8 @@ $(document).ready(function () {
 
     // ============== Getting the API using AJAX ================= \\
 
-    $('#dogTypes').on('click', function () {
+    $('#dogTypes').on('click', function(event) {
+        event.preventdefault();
         var dogType = $('#dogTypes').val().trim();
         topics.push(dogType);
 
