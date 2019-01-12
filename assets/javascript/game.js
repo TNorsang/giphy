@@ -4,7 +4,7 @@ $(document).ready(function () {
 
     // ============== Array of Dog Types ================= \\
 
-    var topics = ['husky', 'akita', 'boxer', 'bullmastiff', 'collie', 'dobermann', 'dogue de bordeaux', 'english pointer', 'german shepherd']
+    var topics = ['husky', 'akita', 'boxer', 'bullmastiff', 'collie', 'dobermann', 'dogue de bordeaux', 'english pointer',]
 
 
     function displayDogInfo() {
