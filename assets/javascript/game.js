@@ -1,7 +1,7 @@
 // ============== waits for the DOM to load ================= \\
 
 $(document).ready(function () {
-
+    
     // ============== Array of Dog Types ================= \\
 
     var topics = ['husky', 'akita', 'boxer', 'bullmastiff', 'collie', 'dobermann', 'dogue de bordeaux', 'english pointer',]
@@ -25,6 +25,7 @@ $(document).ready(function () {
            console.log(response);
             // creating a div to hold the dog types
             var dogDiv = $("<div class='dog'>");
+            $('#dogImages').empty();
             for (var i = 0; i < 11; i++) {
                 // storing the image 
                 var imageURL = response.data[i].images.fixed_height.url;
@@ -48,7 +49,7 @@ $(document).ready(function () {
 
     // displaying dog data
     function renderButtons() {
-
+       
         $('.dogButtons').empty();
         // this is looping the the array of dog types
         for (var i = 0; i < topics.length; i++) {
@@ -74,13 +75,13 @@ $(document).ready(function () {
     // ============== When a movie button is clicked ================= \\
 
     $('.btn-dark').on('click', function(event) {
-        event.preventdefault();
+        event.preventDefault();
         // grabs the text input in the text field
         var dog = $('#dog-input').val().trim();
-        topics.push(dog);
         console.log(dog);
+        topics.push(dog);
+        $('.dogButtons').append('<button>' + dog + '</button>');
         renderButtons();
-
     })
 
 
