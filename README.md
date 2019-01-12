@@ -1,4 +1,8 @@
 # giphy homework 
+
+https://tnorsang.github.io/giphy/
+
+
 - user clicks on a list of buttons that has already been generated.
 - user sees 10 gifs that is generated after clicking a buttons
 - user clicks one of the gif to play the paused gif
