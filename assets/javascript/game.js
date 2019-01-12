@@ -22,6 +22,7 @@ $(document).ready(function () {
             url: queryURL,
             method: "GET"
         }).then(function (response) {
+           console.log(response);
             // creating a div to hold the dog types
             var dogDiv = $("<div class='dog'>");
             for (var i = 0; i < 11; i++) {
@@ -72,12 +73,12 @@ $(document).ready(function () {
 
     // ============== When a movie button is clicked ================= \\
 
-    $('#add-dog').on('click', function (event) {
+    $('.btn-dark').on('click', function(event) {
         event.preventdefault();
         // grabs the text input in the text field
-        var dogType = $('#dog-input').val().trim();
-        topics.push(dogType);
-        console.log(dogType);
+        var dog = $('#dog-input').val().trim();
+        topics.push(dog);
+        console.log(dog);
         renderButtons();
 
     })
@@ -86,8 +87,6 @@ $(document).ready(function () {
     $(document).on('click', '.topic-btn', displayDogInfo);
 
     renderButtons();
-
-
 
 
 

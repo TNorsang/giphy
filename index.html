@@ -13,17 +13,22 @@
 </head>
 
 <body>
-    <div class="container"> 
+    <img src="assets/images/dog.jpg" alt="cute-dog" id="cuteDog">
+
+
+
+    <div class="container">
         <!-- Rendered buttons will display here -->
         <div id="buttons" class="dogButtons"></div>
-        
+
 
         <form id="dog-form">
+            <label for="dog-input"></label>
             <input type="text" id="dog-input">
             <br>
 
-            <!-- Button triggers new movie to be added -->
-            <input id="add-dog" type="submit" value="Add This" class="btn btn-dark">
+            <!-- Button adds a new dog type to be added -->
+            <input id="addDog" type="submit" value="Add This Dog Type" class="btn btn-dark">
         </form>
 
         <div id="dogImages"></div>

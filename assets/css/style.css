@@ -1,3 +1,13 @@
+/* moved the whole content up */
+.container {
+    margin-top: -4%;
+}
+
+/* moved the search box and button up */
+#dog-form {
+    margin-top: -4%;
+}
+
 /* Moved the dog button down */
 .dogButtons {
     margin-top: 1%;
@@ -17,6 +27,9 @@
 
 /* Moved the Dog Images down */
 .dog {
+    border-style: dashed;
+    border-color: rgb(245, 157, 43);
+    border-width: 20px;
     margin-top: 10%;
 }
 /* Put space between the arrays of buttons */
@@ -29,7 +42,14 @@
 .btn-dark {
     width: 100%;
 }
-
+/* Spacing out the images displayed */
 img {
     margin: 80px;
+}
+
+/* Cute dog picture attributes */
+#cuteDog {
+    width: 40%;
+    margin-top: -1%;
+    margin-left: 31%;
 }
