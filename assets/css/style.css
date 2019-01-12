@@ -19,9 +19,17 @@
 .dog {
     margin-top: 10%;
 }
-
+/* Put space between the arrays of buttons */
 .btn-outline-dark {
   margin: 2%;
 }
 
+/* Add This Button Attributes */
 
+.btn-dark {
+    width: 100%;
+}
+
+img {
+    margin: 80px;
+}

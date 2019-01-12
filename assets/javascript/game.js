@@ -29,6 +29,8 @@ $(document).ready(function () {
                 var imageURL = response.data[i].images.fixed_height.url;
                 // Creating a variable to hold an element that will hold the image
                 var image = $('<img>').attr('src', imageURL);
+
+               
                 // Appending the Image
                 dogDiv.append(image);
 
