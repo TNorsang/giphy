@@ -1,4 +1,17 @@
 .container {
     margin: 10px;
+    
+}
+.dogButtons {
+    margin-bottom: 6%;
 }
 
+#dog-input {
+    width: 100%;
+    margin-bottom: 2%;
+}
+
+#imgOverride {
+    z-index: 0;
+    margin-top: 20%;
+}
