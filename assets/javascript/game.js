@@ -28,16 +28,24 @@ $(document).ready(function () {
             $('#dogImages').empty();
             for (var i = 0; i < 11; i++) {
                 // storing the image 
-                var imageURL = response.data[i].images.fixed_height.url;
                 var imageStill = response.data[i].images.fixed_height_still.url;
-                // Creating a variable to hold an element that will hold the image
-                var image = $('<img>').attr('src', imageURL);
-                image.attr('data-still', imageStill);
+                var imageURL = response.data[i].images.fixed_height.url;
                 
-                $('#dogImages').on('click',function() {
+                // Creating a variable to hold an element that will hold the image
+                var image = $('<img>').attr('src', imageStill);
+                // Adding class 
+                image.addClass('gif');
+                // Adding attr data-still to imageStill
+                image.attr('data-still', imageStill);
+                // Adding attr data-state to still
+                image.attr('data-state', 'still');
+                // Adding attr data-animate to imageURL
+                image.attr('data-animate', imageURL);
+                
+                $('.gif').on('click',function() {
                     var state = $(this).attr('data-state');
 
-                    if (state === "still") {
+                    if (state === 'still') {
                         $(this).attr("src", $(this).attr("data-animate"));
                         $(this).attr("data-state", "animate");
                       } else {
@@ -45,7 +53,7 @@ $(document).ready(function () {
                         $(this).attr("data-state", "still");
                       }
 
-                }
+                });
 
                
                 // Appending the Image
