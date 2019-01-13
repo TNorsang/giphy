@@ -95,7 +95,7 @@ $(document).ready(function () {
             a.attr('data-name', topics[i]);
             // displaying the text 
             a.text(topics[i]);
-
+            // appending the dog button to var a
             $('.dogButtons').append(a);
 
         }
@@ -114,7 +114,7 @@ $(document).ready(function () {
         renderButtons();
     })
 
-
+     // ============== a document on click where it grabs the dog info when class topic btn is clicked ================= \\
     $(document).on('click', '.topic-btn', displayDogInfo);
 
     renderButtons();
