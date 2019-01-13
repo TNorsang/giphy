@@ -13,15 +13,16 @@
 </head>
 
 <body>
+    <!-- adding the dog image in the header -->
     <img src="assets/images/dog.jpg" alt="cute-dog" id="cuteDog">
 
 
-
+    <!-- Container that has all the classes in it -->
     <div class="container dif">
         <!-- Rendered buttons will display here -->
         <div id="buttons" class="dogButtons"></div>
 
-
+        <!-- Text form for the dog input -->
         <form id="dog-form">
             <label for="dog-input"></label>
             <input type="text" id="dog-input">
@@ -31,11 +32,14 @@
             <input id="addDog" type="submit" value="Add This Dog Type" class="btn btn-dark">
         </form>
 
-        <div id="dogImages"></div>
+        <!-- rating and dog images place holder -->
+        <div id="rating"></div>
+        <div id="dogImages">
+        </div>
 
     </div>
 
-
+    <!-- Linking the javascript game.js file -->
     <script type="text/javascript" src="assets/javascript/game.js"></script>
 </body>
 

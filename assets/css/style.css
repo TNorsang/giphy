@@ -27,6 +27,8 @@
 
 /* Moved the Dog Images down */
 .dog {
+    font-size: 3vh;
+    color: white;
     border-style: dashed;
     border-color: rgb(245, 157, 43);
     border-width: 20px;
@@ -52,4 +54,9 @@ img {
     width: 40%;
     margin-top: -1%;
     margin-left: 31%;
+}
+
+/* making the width of the code 28% */
+.gif {
+    width: 28%;
 }

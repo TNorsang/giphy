@@ -1,12 +1,12 @@
 // ============== waits for the DOM to load ================= \\
 
 $(document).ready(function () {
-    
+
     // ============== Array of Dog Types ================= \\
 
     var topics = ['husky', 'akita', 'boxer', 'bullmastiff', 'collie', 'dobermann', 'dogue de bordeaux', 'english pointer',]
 
-
+     // ============== To display/grab the dog info ================= \\
     function displayDogInfo() {
 
         var dogBreed = $(this).attr('data-name');
@@ -22,17 +22,22 @@ $(document).ready(function () {
             url: queryURL,
             method: "GET"
         }).then(function (response) {
-           console.log(response);
+            console.log(response);
             // creating a div to hold the dog types
             var dogDiv = $("<div class='dog'>");
+            var ratingDiv = $("<div class='rating'>");
             $('#dogImages').empty();
-            for (var i = 0; i < 11; i++) {
+            for (var i = 0; i < 12; i++) {
                 // storing the image 
+                var rating = response.data[i].rating;
                 var imageStill = response.data[i].images.fixed_height_still.url;
                 var imageURL = response.data[i].images.fixed_height.url;
-                
+
+
                 // Creating a variable to hold an element that will hold the image
                 var image = $('<img>').attr('src', imageStill);
+                image.addClass('img-thumbnail');
+                var rating = $('.dog').append('Rt ' + rating + '');
                 // Adding class 
                 image.addClass('gif');
                 // Adding attr data-still to imageStill
@@ -41,32 +46,35 @@ $(document).ready(function () {
                 image.attr('data-state', 'still');
                 // Adding attr data-animate to imageURL
                 image.attr('data-animate', imageURL);
-                
-                $('.gif').on('click',function() {
+
+
+                // Appending the Image
+                dogDiv.append(image);
+
+                $("#dogImages").prepend(dogDiv);
+
+                 // ============== Making the images pause and play ================= \\
+                $('.gif').on('click', function () {
                     var state = $(this).attr('data-state');
 
                     if (state === 'still') {
                         $(this).attr("src", $(this).attr("data-animate"));
                         $(this).attr("data-state", "animate");
-                      } else {
+                    } else {
                         $(this).attr("src", $(this).attr("data-still"));
                         $(this).attr("data-state", "still");
-                      }
-                      clearSearch();
+                    }
+                    clearSearch();
                 });
 
-               
-                // Appending the Image
-                dogDiv.append(image);
 
-                $("#dogImages").prepend(dogDiv);
             }
             debugResponse = response;
             console.log(debugResponse);
         });
     }
 
-
+     // ============== Clear the search text ================= \\
     function clearSearch() {
         $('#dog-input').clear();
     }
@@ -75,7 +83,7 @@ $(document).ready(function () {
 
     // displaying dog data
     function renderButtons() {
-       
+
         $('.dogButtons').empty();
         // this is looping the the array of dog types
         for (var i = 0; i < topics.length; i++) {
@@ -94,13 +102,9 @@ $(document).ready(function () {
 
     };
 
-
-
-
-
     // ============== When a movie button is clicked ================= \\
 
-    $('.btn-dark').on('click', function(event) {
+    $('.btn-dark').on('click', function (event) {
         event.preventDefault();
         // grabs the text input in the text field
         var dog = $('#dog-input').val().trim();
